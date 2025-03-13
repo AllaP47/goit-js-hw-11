@@ -25,8 +25,73 @@ body {
 }
 
 main {
-  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 36px;
+  margin: 0 auto;
 }
 main:has(.back-link) {
   text-align: center;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  justify-content: center;
+  padding-top: 32px;
+}
+
+.gallery-item {
+  flex: 1 1 calc(25% - 16px);
+  min-width: 250px;
+  max-width: 100%;
+  text-align: center;
+}
+
+.info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.loader {
+  display: none;
+  text-align: center;
+  font-size: 20px;
+  margin-top: 20px;
 }
