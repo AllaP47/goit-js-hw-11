@@ -14,12 +14,13 @@ form.addEventListener("submit", async (event) => {
   try {
     const images = await fetchImages(query);
     renderGallery(images);
-    event.target.reset(); // Очищення форми після пошуку
+    event.target.reset();
   } catch {
     iziToast.error({ title: "Error", message: "Failed to fetch images" });
   } finally {
     loader.style.display = "none"; // Сховати лоадер
   }
 });
+
 
 
