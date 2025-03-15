@@ -92,7 +92,7 @@ button:hover {
 }
 
 .info p {
-  max-width: 34px;
+  min-width: 34px;
   max-height: 40px;
   display: flex;
 

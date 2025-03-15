@@ -1,13 +1,16 @@
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
-import iziToast from "izitoast";
+
+import iziToast from "izitoast/dist/js/iziToast.min.js";
 import "izitoast/dist/css/iziToast.min.css";
 
 const galleryContainer = document.querySelector(".gallery");
+
 let lightbox = new SimpleLightbox(".gallery a");
 
 export function renderGallery(images) {
-  galleryContainer.innerHTML = ""; // Очистка перед рендером
+ galleryContainer.innerHTML = "";
+
 
   if (images.length === 0) {
     iziToast.error({
@@ -26,10 +29,10 @@ export function renderGallery(images) {
         <img src="${img.webformatURL}" alt="${img.tags}" loading="lazy" />
       </a>
       <div class="info">
-        <p>❤️ ${img.likes}</p>
-        <p>👁️ ${img.views}</p>
-        <p>💬 ${img.comments}</p>
-        <p>⬇️ ${img.downloads}</p>
+        <p>Likes ${img.likes}</p>
+        <p>Views ${img.views}</p>
+        <p>Comments ${img.comments}</p>
+        <p>Downloads ${img.downloads}</p>
       </div>
     </li>`
     )
@@ -38,3 +41,4 @@ export function renderGallery(images) {
   galleryContainer.insertAdjacentHTML("beforeend", markup);
   lightbox.refresh();
 }
+
